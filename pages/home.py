@@ -1,14 +1,16 @@
 import streamlit as st
 
-# Page configuration
-st.set_page_config(
-    page_title="Home - Streamlit Historic Runs",
-    page_icon="🏠",
-    layout="wide"
-)
-
 # Page header
 st.title("🏠 Home Dashboard")
+st.markdown("---")
+
+# Welcome message
+st.markdown("""
+Welcome to the **Streamlit Historic Runs Visualizer**! 
+
+This application helps you visualize and analyze your Streamlit application's historic runs.
+""")
+
 st.markdown("---")
 
 # Main content area
@@ -76,4 +78,15 @@ with action_col2:
 
 with action_col3:
     if st.button("⚙️ Settings", use_container_width=True):
-        st.info("Settings panel will be implemented") 
+        st.info("Settings panel will be implemented")
+
+# Sidebar information
+with st.sidebar:
+    st.markdown("### About")
+    st.markdown("This dashboard provides an overview of your Streamlit application's performance and recent activity.")
+    
+    st.markdown("### Features")
+    st.markdown("- Real-time metrics")
+    st.markdown("- Performance tracking")
+    st.markdown("- Quick actions")
+    st.markdown("- Run analysis") 

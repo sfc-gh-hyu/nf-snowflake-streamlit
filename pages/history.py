@@ -1,13 +1,6 @@
 import streamlit as st
 from datetime import datetime, timedelta
 
-# Page configuration
-st.set_page_config(
-    page_title="History - Streamlit Historic Runs",
-    page_icon="📈",
-    layout="wide"
-)
-
 # Page header
 st.title("📈 Historic Runs Analysis")
 st.markdown("---")
