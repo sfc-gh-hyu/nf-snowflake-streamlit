@@ -2,28 +2,25 @@ import streamlit as st
 
 # Define pages using st.Page
 home_page = st.Page(
-    "pages/home.py", 
-    title="Home", 
-    icon="🏠",
+    "app_pages/1_home.py", 
+    title="Dashboard", 
+    icon="🧬",
     default=True
 )
 
 history_page = st.Page(
-    "pages/history.py", 
-    title="History", 
-    icon="📈"
+    "app_pages/2_history.py", 
+    title="Pipeline Runs", 
+    icon="🔬"
 )
 
-# Navigation with sections
-pg = st.navigation({
-    "Dashboard": [home_page],
-    "Analytics": [history_page]
-})
+# Navigation without sections
+pg = st.navigation([home_page, history_page])
 
 # Global page configuration
 st.set_page_config(
-    page_title="Streamlit Historic Runs Visualizer",
-    page_icon="📊",
+    page_title="Nextflow Pipeline Analytics - Snowflake",
+    page_icon="🧬",
     layout="wide",
     initial_sidebar_state="expanded"
 )
