@@ -1,6 +1,5 @@
 name: nextflow-pipeline-analytics
 channels:
-  - conda-forge
   - snowflake
 dependencies:
   - python=3.11.*

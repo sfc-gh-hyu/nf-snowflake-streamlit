@@ -26,4 +26,4 @@ st.set_page_config(
 )
 
 # Run the selected page
-pg.run() 
+pg.run()
