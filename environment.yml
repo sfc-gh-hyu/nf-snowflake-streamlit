@@ -8,5 +8,4 @@ dependencies:
   - plotly
   - altair
   - pip
-  - snowflake-connector-python
   - snowflake-snowpark-python
