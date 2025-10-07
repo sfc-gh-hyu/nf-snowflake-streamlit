@@ -86,10 +86,3 @@ with action_col3:
 with st.sidebar:
     st.markdown("### About")
     st.markdown("This dashboard provides comprehensive analytics for Nextflow genomics pipelines running on Snowflake, tracking workflow performance and resource utilization.")
-    
-    st.markdown("### Features")
-    st.markdown("- Real-time pipeline metrics")  
-    st.markdown("- Genomics workflow tracking")
-    st.markdown("- Resource utilization analysis")
-    st.markdown("- Task-level performance insights")
-    st.markdown("- Snowflake data integration") 
