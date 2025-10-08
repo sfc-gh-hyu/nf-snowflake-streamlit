@@ -14,8 +14,14 @@ history_page = st.Page(
     icon="🔬"
 )
 
+settings_page = st.Page(
+    "app_pages/3_configuration.py", 
+    title="Configuration", 
+    icon="⚙️"
+)
+
 # Navigation without sections
-pg = st.navigation([home_page, history_page])
+pg = st.navigation([home_page, history_page, settings_page])
 
 # Global page configuration
 st.set_page_config(
