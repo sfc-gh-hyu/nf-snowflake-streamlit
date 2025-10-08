@@ -43,7 +43,7 @@ def check_again_button(caches_to_clear, label="🔄 Check Again", key=None):
     Returns:
         bool: True if button was clicked, False otherwise
     """
-    if st.button(label, key=key):
+    if st.button(label, key=key, use_container_width=True):
         # Handle single function or list of functions
         if callable(caches_to_clear):
             caches_to_clear.clear()
@@ -137,7 +137,7 @@ with st.sidebar:
 
     check_again_button(
         caches_to_clear=[check_table_exists, check_stage_exists],
-        label="refresh",
+        label="🔄 Check Again",
         key="check_all_configs"
     )
     
