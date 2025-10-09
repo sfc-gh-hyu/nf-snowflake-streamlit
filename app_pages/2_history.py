@@ -243,6 +243,7 @@ st.markdown("---")
 
 # Detailed table section
 st.subheader("📋 Detailed Pipeline Run History")
+st.caption("💡 Click on any row to select it, then click 'View Details' to see full run information")
 
 if not filtered_df.empty:
     # Select and format columns for display
@@ -282,11 +283,13 @@ if not filtered_df.empty:
     
     table_df = table_df.rename(columns=column_rename)
     
-    # Display the table
-    st.dataframe(
+    # Display the table with selection enabled
+    event = st.dataframe(
         table_df,
         use_container_width=True,
         hide_index=True,
+        on_select="rerun",
+        selection_mode="single-row",
         column_config={
             "Status": st.column_config.TextColumn(
                 "Status",
@@ -300,6 +303,21 @@ if not filtered_df.empty:
             )
         }
     )
+    
+    # Show button to view details if a row is selected
+    if len(event.selection.rows) > 0:
+        selected_idx = event.selection.rows[0]
+        selected_run_name = table_df.iloc[selected_idx]['Run Name']
+        
+        col1, col2 = st.columns([3, 1])
+        with col1:
+            st.info(f"Selected run: **{selected_run_name}**")
+        with col2:
+            if st.button("🔍 View Details", type="primary", use_container_width=True):
+                # Store run name in session state to pass between pages
+                st.session_state["selected_run_name"] = selected_run_name
+                # Navigate to detail page
+                st.switch_page("app_pages/3_detail.py")
     
 else:
     st.info("No pipeline run data available. Please check your filters or data connection.")
