@@ -31,7 +31,7 @@ NXF_HISTORY_TBL = Config(
 
 NXF_WORKDIR_STAGE = Config(
     key="NXF_WORKDIR_STAGE",
-    value="NXF_WORKDIR_2", 
+    value="NXF_WORKDIR", 
     description="Snowflake stage used for storing Nextflow intermediate files and artifacts"
 )
 
